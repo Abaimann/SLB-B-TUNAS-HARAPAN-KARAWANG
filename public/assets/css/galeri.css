@@ -1,0 +1,306 @@
+/* Main Gallery Grid */
+.galeri-main-section {
+    max-width: 1400px;
+    margin-bottom: 60px;
+    margin-top: 120px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.galeri-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.galeri-item-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+    animation: galeri-itemFadeIn 0.6s ease-out forwards;
+}
+
+@keyframes galeri-itemFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.galeri-item-card:nth-child(1) { animation-delay: 0.1s; }
+.galeri-item-card:nth-child(2) { animation-delay: 0.2s; }
+.galeri-item-card:nth-child(3) { animation-delay: 0.3s; }
+.galeri-item-card:nth-child(4) { animation-delay: 0.1s; }
+.galeri-item-card:nth-child(5) { animation-delay: 0.2s; }
+.galeri-item-card:nth-child(6) { animation-delay: 0.3s; }
+
+.galeri-item-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.galeri-image-wrapper {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #e8eef5 0%, #d1dce8 100%);
+}
+
+.galeri-item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.galeri-item-card:hover .galeri-item-image {
+    transform: scale(1.15) rotate(2deg);
+}
+
+.galeri-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(26, 35, 126, 0.9) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.galeri-item-card:hover .galeri-image-overlay {
+    opacity: 1;
+}
+
+.galeri-zoom-icon {
+    font-size: 48px;
+    color: white;
+    transform: scale(0);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.galeri-item-card:hover .galeri-zoom-icon {
+    transform: scale(1) rotate(360deg);
+}
+
+.galeri-item-content {
+    padding: 20px;
+}
+
+.galeri-item-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a237e;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+.galeri-item-card:hover .galeri-item-title {
+    color: #ff9800;
+}
+
+.galeri-item-date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #718096;
+    margin-bottom: 12px;
+}
+
+.galeri-date-icon {
+    font-size: 16px;
+    color: #ff9800;
+}
+
+.galeri-item-description {
+    font-size: 14px;
+    color: #4a5568;
+    line-height: 1.7;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Lightbox Modal */
+.galeri-lightbox-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    animation: galeri-modalFadeIn 0.3s ease-out;
+}
+
+@keyframes galeri-modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.galeri-lightbox-modal.active {
+    display: flex;
+}
+
+.galeri-lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    animation: galeri-lightboxZoom 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes galeri-lightboxZoom {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.galeri-lightbox-image {
+    max-width: 100%;
+    max-height: 85vh;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.galeri-lightbox-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    color: white;
+    padding: 30px;
+    border-radius: 0 0 10px 10px;
+}
+
+.galeri-lightbox-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.galeri-lightbox-date {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.galeri-lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: #1a237e;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.galeri-lightbox-close:hover {
+    background: #ff9800;
+    color: white;
+    transform: rotate(90deg) scale(1.1);
+}
+
+.galeri-lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: #1a237e;
+    font-weight: bold;
+}
+
+.galeri-lightbox-nav:hover {
+    background: #ff9800;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.galeri-lightbox-prev {
+    left: 30px;
+}
+
+.galeri-lightbox-next {
+    right: 30px;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .galeri-grid-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .galeri-lightbox-close,
+    .galeri-lightbox-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .galeri-lightbox-prev {
+        left: 15px;
+    }
+
+    .galeri-lightbox-next {
+        right: 15px;
+    }
+
+    .galeri-lightbox-info {
+        padding: 20px;
+    }
+
+    .galeri-lightbox-title {
+        font-size: 18px;
+    }
+
+    .galeri-lightbox-date {
+        font-size: 12px;
+    }
+}

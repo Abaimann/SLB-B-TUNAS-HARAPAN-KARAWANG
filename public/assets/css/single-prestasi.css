@@ -1,0 +1,332 @@
+.single-prestasi-container {
+    max-width: 1400px;
+    margin-top: 80px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 40px 40px 80px;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 40px;
+}
+
+/* Main Content */
+.single-prestasi-main {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.single-prestasi-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.single-prestasi-image {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.single-prestasi-content {
+    padding: 40px;
+}
+
+.single-prestasi-title {
+    font-size: 32px;
+    color: #003d82;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.3;
+    animation: slideInLeft 0.6s ease-out 0.4s backwards;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.single-prestasi-meta {
+    font-size: 14px;
+    color: #718096;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e8eef5;
+    animation: slideInLeft 0.6s ease-out 0.5s backwards;
+}
+
+.single-prestasi-text {
+    font-size: 16px;
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+    animation: fadeIn 0.8s ease-out 0.6s backwards;
+}
+
+/* Sidebar */
+.single-prestasi-sidebar {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
+}
+
+.single-prestasi-sidebar-section {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.single-prestasi-sidebar-title {
+    font-size: 18px;
+    color: #003d82;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #f0b31a;
+    position: relative;
+}
+
+.single-prestasi-sidebar-title::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #f0b31a;
+}
+
+.single-prestasi-sidebar-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.single-prestasi-sidebar-item {
+    display: flex;
+    gap: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e8eef5;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(20px);
+    animation: slideInRight 0.5s ease-out forwards;
+}
+
+.single-prestasi-sidebar-item:nth-child(1) { animation-delay: 0.6s; }
+.single-prestasi-sidebar-item:nth-child(2) { animation-delay: 0.7s; }
+.single-prestasi-sidebar-item:nth-child(3) { animation-delay: 0.8s; }
+.single-prestasi-sidebar-item:nth-child(4) { animation-delay: 0.9s; }
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.single-prestasi-sidebar-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.single-prestasi-sidebar-item:hover {
+    transform: translateX(-5px);
+    cursor: pointer;
+}
+
+.single-prestasi-sidebar-item-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.single-prestasi-sidebar-item:hover .single-prestasi-sidebar-item-image {
+    transform: scale(1.05);
+}
+
+.single-prestasi-sidebar-item-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.single-prestasi-sidebar-item-title {
+    font-size: 15px;
+    color: #003d82;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+.single-prestasi-sidebar-item:hover .single-prestasi-sidebar-item-title {
+    color: #1a7bc4;
+}
+
+.single-prestasi-sidebar-item-date {
+    font-size: 12px;
+    color: #718096;
+    margin-bottom: 5px;
+}
+
+.single-prestasi-sidebar-item-excerpt {
+    font-size: 13px;
+    color: #718096;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .single-prestasi-container {
+        grid-template-columns: 1fr;
+        padding: 0;
+        gap: 0;
+    }
+
+    .single-prestasi-main {
+        margin-bottom: 30px;
+    }
+
+    .single-prestasi-card {
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .single-prestasi-image {
+        height: 280px;
+        border-radius: 0;
+    }
+
+    .single-prestasi-content {
+        padding: 25px 20px;
+    }
+
+    .single-prestasi-title {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .single-prestasi-meta {
+        font-size: 13px;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+
+    .single-prestasi-text {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 18px;
+    }
+
+    .single-prestasi-sidebar {
+        padding: 0 20px;
+    }
+
+    .single-prestasi-sidebar-section {
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .single-prestasi-image {
+        height: 240px;
+    }
+
+    .single-prestasi-content {
+        padding: 20px 16px;
+    }
+
+    .single-prestasi-title {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .single-prestasi-meta {
+        font-size: 12px;
+    }
+
+    .single-prestasi-text {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .single-prestasi-sidebar {
+        padding: 0 16px;
+    }
+
+    .single-prestasi-sidebar-section {
+        padding: 20px 16px;
+    }
+
+    .single-prestasi-sidebar-title {
+        font-size: 16px;
+        margin-bottom: 18px;
+        padding-bottom: 12px;
+    }
+
+    .single-prestasi-sidebar-item {
+        gap: 12px;
+        padding-bottom: 18px;
+    }
+
+    .single-prestasi-sidebar-item-image {
+        width: 75px;
+        height: 75px;
+    }
+
+    .single-prestasi-sidebar-item-title {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .single-prestasi-sidebar-item-date {
+        font-size: 11px;
+        margin-bottom: 4px;
+    }
+
+    .single-prestasi-sidebar-item-excerpt {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+}

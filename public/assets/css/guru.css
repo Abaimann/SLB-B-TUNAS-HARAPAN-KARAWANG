@@ -1,0 +1,197 @@
+.guru-section {
+    max-width: 1400px;
+    margin-top: 120px;
+    margin-bottom: 40px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.guru-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.guru-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: guru-cardFadeIn 0.6s ease-out forwards;
+    position: relative;
+}
+
+.guru-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #1a237e, #283593);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.guru-card:hover::before {
+    transform: scaleX(1);
+}
+
+@keyframes guru-cardFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.guru-card:nth-child(1) { animation-delay: 0.1s; }
+.guru-card:nth-child(2) { animation-delay: 0.2s; }
+.guru-card:nth-child(3) { animation-delay: 0.3s; }
+.guru-card:nth-child(4) { animation-delay: 0.4s; }
+.guru-card:nth-child(5) { animation-delay: 0.5s; }
+.guru-card:nth-child(6) { animation-delay: 0.6s; }
+.guru-card:nth-child(7) { animation-delay: 0.7s; }
+.guru-card:nth-child(8) { animation-delay: 0.8s; }
+.guru-card:nth-child(9) { animation-delay: 0.9s; }
+.guru-card:nth-child(10) { animation-delay: 1s; }
+
+.guru-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.guru-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 320px;
+    background: linear-gradient(135deg, #e8eef5 0%, #f5f7fa 100%);
+}
+
+.guru-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(135deg, #1a237e, #283593);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.guru-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.guru-card:hover .guru-image {
+    transform: scale(1.1);
+}
+
+.guru-content {
+    padding: 25px;
+    text-align: center;
+}
+
+.guru-name {
+    font-size: 22px;
+    color: #1a237e;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.guru-title {
+    font-size: 14px;
+    color: #ff9800;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: none;
+}
+
+.guru-description {
+    font-size: 14px;
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.guru-info {
+    display: none;
+}
+
+.guru-info-item {
+    display: none;
+}
+
+.guru-info-icon {
+    display: none;
+}
+
+/* BADGE GURU */
+.guru-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #1a237e;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+/* MAPEL DI BAWAH NAMA */
+.guru-mapel {
+    font-size: 14px;
+    color: #ff9800;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 968px) {
+    .guru-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+    }
+
+    .guru-image-wrapper {
+        height: 280px;
+    }
+
+    .guru-badge {
+        top: 10px;
+        left: 10px;
+        padding: 6px 14px;
+        font-size: 11px;
+        border-radius: 16px;
+    }
+}
+
+@media (max-width: 640px) {
+    .guru-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .guru-image-wrapper {
+        height: 350px;
+    }
+}

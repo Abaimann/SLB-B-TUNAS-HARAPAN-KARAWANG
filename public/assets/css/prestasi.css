@@ -1,0 +1,145 @@
+.prestasi-container {
+    max-width: 1200px;
+    margin-top: 120px;
+    margin-bottom: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* ANIMASI GLOBAL */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.prestasi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+/* ANIMASI CARD */
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.prestasi-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+    opacity: 0;
+    animation: cardFadeIn 0.6s ease-out forwards;
+}
+
+/* DELAY BERTINGKAT */
+.prestasi-card:nth-child(1) { animation-delay: 0.2s; }
+.prestasi-card:nth-child(2) { animation-delay: 0.4s; }
+.prestasi-card:nth-child(3) { animation-delay: 0.6s; }
+.prestasi-card:nth-child(4) { animation-delay: 0.8s; }
+.prestasi-card:nth-child(5) { animation-delay: 1s; }
+.prestasi-card:nth-child(6) { animation-delay: 1.2s; }
+
+.prestasi-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+.prestasi-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: #e8e9ff;
+    transition: transform 0.5s ease;
+}
+
+/* ZOOM ON HOVER */
+.prestasi-card:hover .prestasi-image {
+    transform: scale(1.08);
+}
+
+.prestasi-content {
+    padding: 20px;
+}
+
+.prestasi-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 18px;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-right: 6px;
+    margin-bottom: 10px;
+}
+
+.tingkat {
+    background: #ffde59;
+    color: #6d5200;
+}
+
+.kategori {
+    background: #ff6b6b;
+    color: white;
+}
+
+.prestasi-title {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.prestasi-date {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 12px;
+}
+
+.prestasi-description {
+    color: #555;
+    font-size: 0.95em;
+    margin-bottom: 18px;
+}
+
+.btn-more {
+    display: inline-block;
+    padding: 8px 14px;
+    background: #667eea;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn-more:hover {
+    background: #5563d4;
+}
+
+@media (max-width: 768px) {
+    .prestasi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Animasi mobile lebih cepat */
+    .prestasi-card:nth-child(n) {
+        animation-delay: 0.1s !important;
+    }
+}

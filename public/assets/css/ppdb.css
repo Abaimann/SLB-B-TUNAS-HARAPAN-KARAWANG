@@ -1,0 +1,229 @@
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.container {
+    max-width: 900px;
+    margin-top: 120px;
+    margin-bottom: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.ppdb-form-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ppdb-form-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+}
+
+.ppdb-form-card:nth-child(1) { animation-delay: 0.1s; }
+.ppdb-form-card:nth-child(2) { animation-delay: 0.2s; }
+.ppdb-form-card:nth-child(3) { animation-delay: 0.3s; }
+.ppdb-form-card:nth-child(4) { animation-delay: 0.4s; }
+.ppdb-form-card:nth-child(5) { animation-delay: 0.5s; }
+.ppdb-form-card:nth-child(6) { animation-delay: 0.6s; }
+.ppdb-form-card:nth-child(7) { animation-delay: 0.7s; }
+
+.ppdb-section-title {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 25px;
+    color: #ff9800;
+    display: flex;
+    align-items: center;
+    animation: slideInRight 0.8s ease-out;
+}
+
+.ppdb-section-title img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.col-full {
+    grid-column: 1 / -1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 8px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.form-control,
+.form-select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form-control:hover,
+.form-select:hover {
+    border-color: #ffcc80;
+}
+
+.form-control:focus,
+.form-select:focus {
+    outline: none;
+    border-color: #ff9800;
+    box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.15);
+    transform: scale(1.01);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.ppdb-statement-box {
+    background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
+    border: 2px solid #ffcc80;
+    border-radius: 10px;
+    padding: 20px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.ppdb-statement-box p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.ppdb-statement-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.ppdb-statement-box ul li {
+    padding-left: 25px;
+    margin-bottom: 10px;
+    position: relative;
+    transition: transform 0.2s ease;
+    color: #444;
+}
+
+.ppdb-statement-box ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #ff9800;
+    font-weight: bold;
+}
+
+.ppdb-statement-box ul li:hover {
+    transform: translateX(5px);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.ppdb-btn-submit {
+    background: linear-gradient(135deg, #ff9800 0%, #e65100 100%);
+    border: none;
+    color: white;
+    padding: 15px 50px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+}
+
+.ppdb-btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 152, 0, 0.6);
+    background: linear-gradient(135deg, #e65100 0%, #ff9800 100%);
+}
+
+.ppdb-btn-submit:active {
+    transform: translateY(0);
+}
+
+.text-muted {
+    color: #999;
+    font-size: 13px;
+}
+
+/* --- VALIDASI ERROR (MERAH) --- */
+.is-invalid {
+    border-color: #e74c3c !important;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.15) !important;
+}
+
+.invalid-feedback {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* --- ALERT ERROR UMUM DI ATAS FORM --- */
+.alert-danger {
+    background: #fcebea;
+    border-left: 5px solid #e3342f;
+    padding: 15px;
+    border-radius: 8px;
+    color: #cc1f1a;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* --- ALERT SUCCESS (HIJAU) --- */
+.alert-success {
+    background: #e8f5e9;
+    border-left: 5px solid #2ecc71;
+    padding: 15px;
+    border-radius: 8px;
+    color: #1e7e34;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+
+@media (max-width: 768px) {
+    .ppdb-form-card {
+        padding: 20px;
+    }
+
+    .row {
+        grid-template-columns: 1fr;
+    }
+
+    .ppdb-section-title {
+        font-size: 16px;
+    }
+}

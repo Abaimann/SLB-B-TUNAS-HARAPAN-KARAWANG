@@ -1,0 +1,283 @@
+.kegiatanpage-body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+    min-height: 100vh;
+    padding: 80px 40px;
+}
+
+.kegiatanpage-container {
+    max-width: 1400px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.kegiatanpage-section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.kegiatanpage-section-title {
+    font-size: 42px;
+    color: #1a237e;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.kegiatanpage-section-subtitle {
+    font-size: 16px;
+    color: #718096;
+}
+
+.kegiatanpage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.kegiatanpage-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: cardFadeIn 0.6s ease-out forwards;
+}
+
+.kegiatanpage-card:nth-child(1) {animation-delay: 0.2s;}
+.kegiatanpage-card:nth-child(2) {animation-delay: 0.4s;}
+.kegiatanpage-card:nth-child(3) {animation-delay: 0.8s;}
+.kegiatanpage-card:nth-child(4) {animation-delay: 1s;}
+.kegiatanpage-card:nth-child(5) {animation-delay: 1.2s;}
+.kegiatanpage-card:nth-child(6) {animation-delay: 1.4s;}
+
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.kegiatanpage-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.kegiatanpage-image-wrapper {
+    overflow: hidden;
+    position: relative;
+    height: 250px;
+}
+
+.kegiatanpage-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.kegiatanpage-card:hover .kegiatanpage-image {
+    transform: scale(1.1);
+}
+
+.kegiatanpage-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+}
+
+.kegiatanpage-content {
+    padding: 25px;
+}
+
+.kegiatanpage-card-title {
+    font-size: 20px;
+    color: #1a237e;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.kegiatanpage-description {
+    font-size: 14px;
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.kegiatanpage-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #e8eef5;
+}
+
+.kegiatanpage-date {
+    display: flex;
+    align-items: center;
+    color: #1a237e;
+    font-weight: 500;
+    font-size: 13px;
+    gap: 8px;
+}
+
+.kegiatanpage-date-icon {
+    color: #ff9800;
+    font-size: 16px;
+}
+
+.kegiatanpage-author {
+    display: flex;
+    align-items: center;
+    color: #718096;
+    font-size: 13px;
+    gap: 8px;
+}
+
+.kegiatanpage-author-icon {
+    color: #1a237e;
+    font-size: 16px;
+}
+
+.kegiatanpage-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.kegiatanpage-read-more {
+    color: #ff9800;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.kegiatanpage-read-more:hover {
+    gap: 12px;
+    color: #f57c00;
+}
+
+.kegiatanpage-read-more::after {
+    content: '→';
+    font-size: 16px;
+}
+
+.kegiatanpage-empty {
+    text-align: center;
+    padding: 80px 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.kegiatanpage-empty-icon {
+    font-size: 80px;
+    margin-bottom: 25px;
+    opacity: 0.3;
+}
+
+.kegiatanpage-empty-text {
+    color: #4a5568;
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.kegiatanpage-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff9800, #f57c00);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+}
+
+.kegiatanpage-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+}
+
+@media (max-width: 968px) {
+    .kegiatanpage-body {
+        padding: 60px 20px;
+    }
+
+    .kegiatanpage-section-title {
+        font-size: 32px;
+    }
+
+    .kegiatanpage-section-subtitle {
+        font-size: 14px;
+    }
+
+    .kegiatanpage-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .kegiatanpage-card:nth-child(1),
+    .kegiatanpage-card:nth-child(2),
+    .kegiatanpage-card:nth-child(3) {
+        animation-delay: 0.1s;
+    }
+
+    .kegiatanpage-image-wrapper {
+        height: 220px;
+    }
+
+    .kegiatanpage-meta {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+}
